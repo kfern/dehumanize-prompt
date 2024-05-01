@@ -26,10 +26,35 @@ The main components of this technique include:
 
 - Dehumanized prompts: Using direct, concise, and clear instructions that emphasize the task at hand instead of addressing the model as a human-like entity.
 - Machine-like interaction: Encouraging a straightforward, task-oriented exchange to reduce the likelihood of the model generating unnecessary or redundant information.
+- Eliminating human roles or personas: Avoid incorporating human roles or personas during the prompt engineering process.
 
 ## Experimental Setup
 
 To evaluate the effectiveness of the Dehumanize Prompt technique for language model models (LLMs), we are using ChainForge at https://chainforge.ai, an open-source visual programming environment for prompt engineering and evaluating the robustness of prompts and text generation models. This tool is designed to evaluate the robustness of prompts and text generation models in a way that goes beyond anecdotal evidence.
+
+- 100% success rate in generating Racket code using GPT-3.5 in the "Measure impact of system message on response" ChainForge Flows Examples. You can view the result directly at the following link : https://chainforge.ai/play/?f=37wlj5rychogs
+
+![dehumanize-prompt-racket 100% Success](evidences/dehumanize-prompt-racket-base.png)
+
+Steps to reproduce the result:
+
+1. Visit the Chainforge.ai playground at: <https://chainforge.ai/play/>
+2. Click on the "Example Flows" button.
+3. Select the "Measure impact of system message on response" example.
+4. Add a new OpenAI > GPT 3.5 Model with the following details:
+
+   - Nickname: dehumanize-prompt
+   - Model Version: gpt-3.5-turbo (default)
+
+5. Paste the following Dehumanized **system message** prompt:
+
+```
+You are a software generator machine that creates programs in the Racket programming language. Your response has to be **CODE ONLY**, because it will be used by a machine that only knows this syntax.
+```
+
+6. Click the "Submit" button with the default values.
+7. Run the "Prompt Node".
+8. Run the "JavaScript Evaluator".
 
 ## Results
 
@@ -47,3 +72,5 @@ Future work includes evaluating the effectiveness of this technique in real-worl
 4. **Generalization:** Investigate the extent to which the technique can be generalized to other NLP tasks or domains. This could involve applying the technique to a range of different tasks or models.
 
 By addressing these areas, we can gain a better understanding of the strengths and limitations of the technique, and identify opportunities for further research and development.
+
+Copyright &copy; Navarro Páez, F (2024)
