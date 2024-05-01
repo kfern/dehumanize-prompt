@@ -32,7 +32,7 @@ The main components of this technique include:
 
 To evaluate the effectiveness of the Dehumanize Prompt technique for language model models (LLMs), we are using ChainForge at https://chainforge.ai, an open-source visual programming environment for prompt engineering and evaluating the robustness of prompts and text generation models. This tool is designed to evaluate the robustness of prompts and text generation models in a way that goes beyond anecdotal evidence.
 
-- 100% success rate in generating Racket code using GPT-3.5 in the "Measure impact of system message on response" ChainForge Flows Examples. You can view the result directly at the following link : https://chainforge.ai/play/?f=37wlj5rychogs
+- 100% success rate in generating Racket code using GPT-3.5 in the "Measure impact of system message on response" ChainForge Flows Examples. You can view the result directly at the following link https://chainforge.ai/play/?f=37wlj5rychogs and the issue at https://github.com/ianarawjo/ChainForge/issues/272
 
 ![dehumanize-prompt-racket 100% Success](evidences/dehumanize-prompt-racket-base.png)
 
@@ -49,7 +49,8 @@ Steps to reproduce the result:
 5. Paste the following Dehumanized **system message** prompt:
 
 ```
-You are a software generator machine that creates programs in the Racket programming language. Your response has to be **CODE ONLY**, because it will be used by a machine that only knows this syntax.
+You are a software generator machine that creates programs in the Racket programming language.
+Your response has to be **CODE ONLY**, because it will be used by a machine that only knows this syntax.
 ```
 
 6. Click the "Submit" button with the default values.
